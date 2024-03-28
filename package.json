@@ -1,6 +1,6 @@
 {
   "name": "create-dnk-cms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,8 @@
     "create-dnk-cms": "bin/create-dnk-cms.js"
   },
   "scripts": {
-    "build": "rollup -c rollup.config.js -w"
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js "
   },
   "files": [
     "dist",
@@ -41,7 +42,6 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.1.0",
     "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-replace": "^5.0.5",
     "@rollup/plugin-typescript": "^11.1.6",
     "@types/fs-extra": "^11.0.4",
     "@types/mustache": "^4.2.5",
@@ -49,9 +49,6 @@
     "@types/prompts": "^2.4.9",
     "@types/yargs-parser": "^21.0.3",
     "rollup": "^4.13.1",
-    "rollup-plugin-node-builtins": "^2.1.2",
-    "rollup-plugin-node-globals": "^1.4.0",
-    "rollup-plugin-polyfill-node": "^0.13.0",
     "tslib": "^2.6.2"
   }
 }
