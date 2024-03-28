@@ -1,6 +1,6 @@
 /** @format */
 
-import execa from 'execa';
+import { execa } from 'execa';
 export interface IGitInfo {
   username: string;
   email: string;
@@ -9,8 +9,8 @@ export interface IGitInfo {
 export async function getGitInfo(): Promise<IGitInfo> {
   try {
     const [{ stdout: username }, { stdout: email }] = await Promise.all([
-      execa.execaCommand('git config --global user.name'),
-      execa.execaCommand('git config --global user.email'),
+      execa('git config --global user.name'),
+      execa('git config --global user.email'),
     ]);
     return { username, email };
   } catch (e) {

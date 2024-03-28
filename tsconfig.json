@@ -3,7 +3,9 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "esModuleInterop": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "module": "esnext"
   },
   "include": ["src"],
   "exclude": ["templates"]
