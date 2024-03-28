@@ -1,0 +1,16 @@
+@import './public.scss';
+@import './modules/config.scss';
+@import './modules/var.scss';
+@import './modules/color.scss';
+:root {
+    --main-bg-color: #f4f4f4;
+}
+
+html,
+body,
+#app {
+    overflow: auto;
+    margin: 0;
+    background-color: var(--main-bg-color);
+    min-height: 100vh;
+}
