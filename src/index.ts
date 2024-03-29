@@ -95,7 +95,7 @@ export default async ({
   };
   const selectAppTemplate = async () => {
     appTemplate = (await select({
-      message: 'Pick Umi App Template',
+      message: 'Pick DNK App Template',
       options: [{ label: 'DNK-CMS', value: ETemplate.cms }],
       initialValue: ETemplate.cms,
     })) as ETemplate;
