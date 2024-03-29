@@ -1,12 +1,12 @@
 {
-  "name": "create-dnk-cms",
-  "version": "1.0.2",
+  "name": "create-dnk-app",
+  "version": "1.0.3",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "bin": {
-    "create-dnk-cms": "bin/create-dnk-cms.js"
+    "create-dnk-app": "bin/create-dnk-app.js"
   },
   "scripts": {
     "dev": "rollup -c rollup.config.js -w",
@@ -24,8 +24,7 @@
     "dnk",
     "Dnake"
   ],
-  "author": "",
-  "license": "MIT",
+  "author": "huangyan321 <1604549268@qq.com>",
   "dependencies": {
     "@clack/prompts": "^0.7.0",
     "chalk": "4",
