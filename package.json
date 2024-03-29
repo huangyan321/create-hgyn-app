@@ -1,12 +1,12 @@
 {
-  "name": "create-dnk-app",
-  "version": "1.0.3",
+  "name": "create-hgyn-app",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "bin": {
-    "create-dnk-app": "bin/create-dnk-app.js"
+    "create-hgyn-app": "bin/create-hgyn-app.js"
   },
   "scripts": {
     "dev": "rollup -c rollup.config.js -w",
