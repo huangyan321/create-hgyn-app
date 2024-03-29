@@ -13,6 +13,7 @@ import BaseGenerator from './utils/BaseGenerator/BaseGenerator';
 import cs from 'cross-spawn';
 import semver from 'semver';
 import { fileURLToPath } from 'url';
+import { ETemplate, internalTemplate } from './template';
 interface IContext {
   projectRoot: string;
   inMonorepo: boolean;
@@ -27,9 +28,7 @@ enum ENpmClient {
   yarn = 'yarn',
   pnpm = 'pnpm',
 }
-enum ETemplate {
-  cms = 'cms',
-}
+
 interface ITemplateArgs {
   template?: string;
 }
@@ -62,7 +61,7 @@ const DEFAULT_DATA = {
   registry: ERegistry.npm,
   withHusky: false,
   extraNpmrc: '',
-  appTemplate: ETemplate.cms,
+  appTemplate: ETemplate.vitesseLite,
 } satisfies IDefaultData;
 interface IGeneratorOpts {
   cwd: string;
@@ -78,7 +77,7 @@ export default async ({
   let [name] = args._;
   let npmClient = ENpmClient.pnpm;
   let registry = ERegistry.npm;
-  let appTemplate = defaultData?.appTemplate || ETemplate.cms;
+  let appTemplate = defaultData?.appTemplate || ETemplate.vitesseLite;
 
   const { username, email } = await getGitInfo();
 
@@ -96,8 +95,8 @@ export default async ({
   const selectAppTemplate = async () => {
     appTemplate = (await select({
       message: 'Pick DNK App Template',
-      options: [{ label: 'DNK-CMS', value: ETemplate.cms }],
-      initialValue: ETemplate.cms,
+      options: internalTemplate,
+      initialValue: ETemplate.vitesseLite,
     })) as ETemplate;
   };
   const selectNpmClient = async () => {
