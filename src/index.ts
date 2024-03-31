@@ -89,7 +89,7 @@ export default async ({
   const { isCancel, text, select, intro, outro } = clackPrompts;
 
   const exitPrompt = () => {
-    outro(chalk.red('Exit create-umi'));
+    outro(chalk.red('Exit create-hgyn-app'));
     process.exit(1);
   };
   const selectAppTemplate = async () => {
