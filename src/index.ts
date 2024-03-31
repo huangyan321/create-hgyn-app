@@ -53,9 +53,9 @@ export interface IDefaultData extends ITemplateParams {
   appTemplate?: ETemplate;
 }
 const DEFAULT_DATA = {
-  name: 'create-dnk-cms',
+  name: 'create-hgyn-cms',
   email: '1604549268@qq.com',
-  author: 'dnk',
+  author: 'huangyan321',
   version: pkg.version,
   npmClient: ENpmClient.npm,
   registry: ERegistry.npm,
@@ -83,7 +83,7 @@ export default async ({
 
   const author = email && username ? `${username} <${email}>` : '';
 
-  let pluginName = `dnk-plugin-${name || 'demo'}`;
+  let pluginName = `hgyn-plugin-${name || 'demo'}`;
 
   const target = name ? join(cwd, name + '') : cwd;
   const { isCancel, text, select, intro, outro } = clackPrompts;
@@ -94,7 +94,7 @@ export default async ({
   };
   const selectAppTemplate = async () => {
     appTemplate = (await select({
-      message: 'Pick DNK App Template',
+      message: 'Pick App Template',
       options: internalTemplate,
       initialValue: ETemplate.vitesseLite,
     })) as ETemplate;
@@ -130,7 +130,7 @@ export default async ({
     })) as ERegistry;
   };
   const internalTemplatePrompts = async () => {
-    intro(chalk.bgHex('#19BDD2')(' create-dnk-cms '));
+    intro(chalk.bgHex('#19BDD2')(' create-hgyn-app '));
 
     await selectAppTemplate();
     if (isCancel(appTemplate)) {
